@@ -1,0 +1,334 @@
+/* Paleta de Cores */
+:root {
+    --color-lavender: #C5B0D8;
+    --color-cream: #F3ECE5;
+    --color-gold: #C4A557;
+    --color-dark-text: #333333; /* Um tom escuro para o texto geral */
+    --color-light-text: #F3ECE5; /* Texto para fundos escuros */
+}
+
+/* Estilos Globais e Tipografia */
+body {
+    font-family: 'Lora', serif; /* Fonte principal do corpo do texto */
+    color: var(--color-dark-text);
+    line-height: 1.6; /* Entrelinhas amplas para leitura */
+}
+
+/* Classes para títulos e textos personalizados */
+.custom-title {
+    font-family: 'Cinzel', serif; /* Fonte para títulos */
+    font-weight: 700; /* Pode ajustar o peso conforme desejar */
+    color: var(--color-dark-text); /* Cor padrão para títulos */
+}
+
+.custom-text {
+    font-family: 'Lora', serif; /* Fonte para texto de parágrafos */
+    color: var(--color-dark-text);
+}
+
+/* Seções e Espaçamento */
+section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+@media (max-width: 767.98px) { /* Para telas menores que 768px (mobile) */
+    section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+/* Estilos Específicos para as Seções */
+
+/* Cabeçalho (Top Bar) */
+#main-header {
+    background-color: var(--color-lavender);
+    /* Se você quiser um fundo com padrões (constelações, cristais), pode adicionar aqui: */
+    /* background-image: url('../img/background-pattern.png'); */
+    /* background-repeat: repeat; */
+    /* background-size: cover; */
+}
+
+#main-header img {
+    /* O estilo inline no HTML já define max-height. Adicione outros ajustes se precisar. */
+    display: block; /* Garante que a margem automática centralize */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+
+/* Seção de Boas-Vindas */
+#welcome-section {
+    background-color: var(--color-cream);
+}
+
+/* Seção de Serviços Oferecidos (Cards) */
+#services-section {
+    background-color: var(--color-lavender);
+    /* Fundo com padrões também pode ser aplicado aqui */
+}
+
+.service-card {
+    background-color: var(--color-cream); /* Fundo creme para os cards */
+    border: none; /* Remover borda padrão do Bootstrap se não desejar */
+    border-radius: 10px; /* Bordas arredondadas suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+    transition: transform 0.3s ease; /* Transição para efeito de hover */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Pequeno efeito de elevação no hover */
+}
+
+.service-icon {
+    max-width: 80px; /* Tamanho dos ícones nos cards */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto; /* Centraliza e adiciona espaço abaixo */
+}
+
+/* Botão "Ver todos os serviços" */
+.custom-button {
+    background-color: transparent; /* Fundo transparente */
+    border: 2px solid var(--color-dark-text); /* Borda escura */
+    color: var(--color-dark-text); /* Texto escuro */
+    padding: 12px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: var(--color-dark-text); /* Fundo escuro no hover */
+    color: var(--color-light-text); /* Texto claro no hover */
+    border-color: var(--color-dark-text); /* Borda igual ao fundo no hover */
+}
+
+
+/* Rodapé */
+#main-footer {
+    background-color: var(--color-lavender);
+    color: var(--color-dark-text); /* Cor do texto no rodapé */
+}
+
+.custom-footer-text {
+    font-family: 'Lora', serif; /* Garante a fonte do corpo para o rodapé */
+    font-size: 1rem; /* Tamanho da fonte padrão */
+}
+
+/* Estilo para links quando aplicável, se quiser mudar a cor padrão */
+a {
+    color: var(--color-dark-text);
+    text-decoration: none; /* Remover sublinhado padrão */
+}
+
+a:hover {
+    color: var(--color-gold); /* Cor dourada no hover para links */
+    text-decoration: underline; /* Adicionar sublinhado no hover */
+}
+
+/* Se precisar de estilos para o fundo com padrões (constelações, cristais, ramos) */
+/* Isso exigiria imagens SVG ou PNG para serem aplicadas como background-image */
+/* Exemplo para a seção de cabeçalho ou serviços: */
+/*
+#main-header, #services-section {
+    background-image: url('../img/constellation-pattern.svg'), url('../img/crystal-branch.svg');
+    background-repeat: repeat, no-repeat;
+    background-position: top left, bottom right;
+    background-size: auto, 20% auto;
+}
+*/
+/* Lembre-se de criar essas imagens e ajustar os caminhos! */
+
+Ótimo! Vamos criar a estrutura da página de serviços (services.html), que detalhará as ofertas com base na imagem 2.jpeg e incluirá os links de contato.
+
+Arquivo: services.html
+
+Crie um novo arquivo na mesma pasta do seu index.html e nomeie-o services.html.
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibila Oracular - Serviços e Preços</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="main-header" class="py-4">
+        <div class="container text-center">
+            <a href="index.html" class="d-inline-block"> <img src="img/logo.png" alt="Sibila Oracular Logo" class="img-fluid" style="max-height: 120px;">
+            </a>
+        </div>
+    </header>
+
+    <section id="offerings-section" class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5 custom-title">Nossos Serviços e Valores</h1>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="p-4 h-100 rounded service-details-block">
+                        <h2 class="mb-4 custom-title-small">Leituras</h2>
+                        <ul class="list-unstyled custom-text service-list">
+                            <li>1 Pergunta Objetiva – R$17,00</li>
+                            <li>3 Perguntas Objetivas – R$40,00</li>
+                            <li>3 Pergunta Aprofundada – R$22,00</li>
+                            <li>30 minutos livres – R$5,00</li>
+                            <li>Análise Mensal – R$47,00</li>
+                            <li>Leitura Personalizada – à partir de R$45,00</li>
+                            <li>Minha vida é um reality – R$14,00</li>
+                            <li>Tiragem mais completa do catáloge, com previsoes breves aa longo prazo (03/06/01 ano) dás principais areas da vida</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="p-4 h-100 rounded service-details-block">
+                        <h2 class="mb-4 custom-title-small">Rituais Energéticos</h2>
+                        <ul class="list-unstyled custom-text service-list">
+                            <li>1 Pedido / 1 Vela – R$47,00</li>
+                            <li class="mt-3"><strong>Amoroso:</strong></li>
+                            <li>Sedução / Atração Sexual – R$130,00</li>
+                            <li>Adocamento Simples – R$165,00</li>
+                            <li>Vira Pensamento – R$170,00</li>
+                            <li>Uniao de Casais – R$180,00</li>
+                            <li>Blindagem Amorosa – R$200,00</li>
+                            <li>Venha até Mim (7 dias) – R$240,00</li>
+                            <li class="mt-3"><strong>Pessoal:</strong></li>
+                            <li>Glamour Passoal – R$150,00</li>
+                            <li>Equilíbrio Mental – R$140,00</li>
+                            <li>Limpeza (Corta e Limpa) – R$220,00</li>
+                            <li>Corte de Vinculo / Afastamento de Rival – R$245,00</li>
+                            <li>Parede de Fogo (Proteção Forte) – R$250,00</li>
+                            <li class="mt-3"><strong>Financeiro:</strong></li>
+                            <li>Prosperidade com Controle Financeiro – R$170,00</li>
+                            <li>Abertura de Caminhos – R$5,00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <div class="p-4 h-100 rounded service-details-block">
+                        <h2 class="mb-4 custom-title-small">Extras</h2>
+                        <ul class="list-unstyled custom-text service-list">
+                            <li>Conselho da Sibila – R$70,00</li>
+                            <li>Análise para Feitiço</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact-links-section" class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4 custom-title">Dúvidas e Atendimento</h2>
+            <p class="mb-4 custom-text">Entre em contato para saber mais ou agendar seu atendimento:</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a href="https://wa.me/SEUNUMERODOTELEFONE?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Sibila%20Oracular."
+                   target="_blank" class="btn custom-social-button whatsapp-button d-flex align-items-center justify-content-center">
+                    <img src="img/whatsapp-icon.svg" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px;">
+                    Conversar no WhatsApp
+                </a>
+                <a href="https://www.instagram.com/sibilaoracular/"
+                   target="_blank" class="btn custom-social-button instagram-button d-flex align-items-center justify-content-center">
+                    <img src="img/instagram-icon.svg" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;">
+                    Visitar Instagram
+                </a>
+            </div>
+            <p class="mt-4 custom-text">@sibilaoracular</p>
+        </div>
+    </section>
+
+
+    <footer id="main-footer" class="py-3 text-center">
+        <div class="container">
+            <p class="mb-0 custom-footer-text">@sibilaoracular</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+Atualizações no css/style.css (Adicione ao seu arquivo existente):
+
+Para que a página de serviços tenha os estilos corretos e para os novos botões sociais, adicione o seguinte código ao final do seu arquivo css/style.css:
+CSS
+
+/* --- Estilos Específicos para a Página de Serviços (services.html) --- */
+
+/* Estilo para os blocos de detalhes dos serviços (Leituras, Rituais, Extras) */
+.service-details-block {
+    background-color: var(--color-cream); /* Fundo creme */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* Títulos internos dos blocos de serviço (Leituras, Rituais, Extras) */
+.custom-title-small {
+    font-family: 'Cinzel', serif;
+    font-weight: 600; /* Um pouco menos pesado que o h1 principal */
+    color: var(--color-dark-text);
+    text-align: center; /* Centraliza os títulos internos */
+}
+
+/* Estilo para as listas de serviços dentro dos blocos */
+.service-list li {
+    padding: 5px 0; /* Espaçamento entre os itens da lista */
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1); /* Linha tracejada suave */
+}
+
+.service-list li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+/* Estilo para os botões de redes sociais */
+.custom-social-button {
+    background-color: var(--color-lavender); /* Fundo lavanda */
+    color: var(--color-dark-text); /* Texto escuro */
+    border: 2px solid var(--color-lavender); /* Borda igual ao fundo */
+    padding: 10px 20px;
+    border-radius: 30px; /* Botões arredondados */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 220px; /* Largura mínima para os botões */
+    justify-content: center; /* Centraliza conteúdo (ícone + texto) */
+}
+
+.custom-social-button:hover {
+    background-color: var(--color-gold); /* Fundo dourado no hover */
+    border-color: var(--color-gold); /* Borda dourada no hover */
+    color: var(--color-light-text); /* Texto claro no hover */
+}
+
+/* Estilos específicos para ícones sociais, se você os tiver como SVG/PNG */
+.custom-social-button img {
+    filter: invert(10%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%); /* Transforma o SVG/PNG em preto para combinar com o texto */
+    transition: filter 0.3s ease;
+}
+
+.custom-social-button:hover img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%); /* Transforma em branco no hover */
+}
+
+/* Se você usar Font Awesome, não precisará dos SVGs e do filtro, apenas adicione o JS do Font Awesome e use as classes */
+/* Exemplo com Font Awesome:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+...
+<a ...> <i class="fab fa-whatsapp me-2"></i> Conversar no WhatsApp </a>
+*/
