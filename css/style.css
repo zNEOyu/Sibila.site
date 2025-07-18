@@ -332,3 +332,11 @@ CSS
 ...
 <a ...> <i class="fab fa-whatsapp me-2"></i> Conversar no WhatsApp </a>
 */
+
+/* Estilo para fazer o card inteiro ser clicável e sem sublinhado */
+.card-link-wrapper {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Mantém a cor do texto padrão do pai */
+    display: block; /* Faz o link ocupar todo o espaço do card */
+    height: 100%; /* Garante que o link cubra toda a altura do card */
+}
